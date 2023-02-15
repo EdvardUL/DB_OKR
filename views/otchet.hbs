@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="allusers">
+        <table>
+        <tr><th>Марка</th><th>Термообработка</th><th>Текучесть</th>
+        {{#each metalls}}
+            <tr>
+                <td>{{this.Mark}}</td>
+                <td>{{this.Thermo}}</td>
+                <td>{{this.Strenght}}</td>
+            </tr>
+        {{/each}} 
+        </table>
+    </div>
+</body>
+</html>

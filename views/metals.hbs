@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список пользователей</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="allusers">
+        <form action="create" method="GET">
+            <input type="submit" value="Добавить">
+        </form>
+        <table>
+        <tr><th>Марка</th><th>Термообработка</th><th>Предел текучести,МПа</th><th>Предел прочности,МПа</tr><th></tr>
+        {{#each metalls}}
+            <tr>
+                <td>{{this.Mark}}</td>
+                <td>{{this.Thermo}}</td>
+                <td>{{this.Fluid}}</td>
+                <td>{{this.Strenght}}</td>
+                <td>
+                    <form action="delete/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+            </tr>
+        {{/each}} 
+        </table>
+                    <form action="therm" method="POST">
+                        <input name="therm" class="field" autocomplete="off"/><br><br>
+                        <input type="submit" value="Задание 1">
+                    </form>
+                    <br>
+                    <form action="min_fluid" method="POST" style="display:inline;">
+                        <input type="submit" value="Задание 2">
+                    </form>
+                    <br>
+                    <form action="more_avg_fluid" method="POST" style="display:inline;">
+                        <input type="submit" value="Задание 3">
+                    </form>
+                    <form action="otchet" method="POST" style="display:inline;">
+                        <input type="submit" value="Отчет">
+                    </form>
+                    <br>
+                    <form action="itog" method="POST" style="display:inline;">
+                        <input type="submit" value="Итог">
+                    </form>
+                    <br>
+    </div>
+</body>
+</html>
